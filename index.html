@@ -45,11 +45,21 @@
         text-shadow: 0 0 8px rgba(0,0,0,0.4);
     }
 
-    .tap-note {
-        margin-top: 10px;
+    button {
+        margin-top: 15px;
+        padding: 10px 22px;
         font-size: 1rem;
-        color: #fff;
-        opacity: 0.9;
+        border: none;
+        border-radius: 20px;
+        background: #ffffff;
+        color: #f09819;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    button:hover {
+        background: #ffe8c2;
     }
 
     @media (max-width: 600px) {
@@ -62,34 +72,34 @@
 
 <body>
 
-    <div class="container">
-        <div class="message">
-            আপোনালৈ মাঘ বিহুৰ আন্তৰিক শুভেচ্ছা যাচিলোঁ...<br>
-            আশাকৰোঁ আগন্তুক সময় আপোনাৰ সুখ শান্তিৰে ভৰপূৰ হওঁক।
-        </div>
-
-        <!-- Muted Auto Video -->
-        <video autoplay muted loop playsinline>
-            <source src="video.mp4" type="video/mp4">
-        </video>
-
-        <!-- Background Music -->
-        <audio id="bgMusic" loop>
-            <source src="music.mp3" type="audio/mpeg">
-        </audio>
-
-        <div class="tap-note">
-            🔊 Tap anywhere to start background music
-        </div>
-
-        <footer>Happy Magh Bihu 🎉</footer>
+<div class="container">
+    <div class="message">
+        আপোনালৈ মাঘ বিহুৰ আন্তৰিক শুভেচ্ছা যাচিলোঁ...<br>
+        আশাকৰোঁ আগন্তুক সময় আপোনাৰ সুখ শান্তিৰে ভৰপূৰ হওঁক।
     </div>
 
+    <!-- Auto-playing muted video -->
+    <video autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support video.
+    </video>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Start Music Button -->
+    <button onclick="playMusic()">▶️ Start Background Music</button>
+
+    <footer>Happy Magh Bihu 🎉</footer>
+</div>
+
 <script>
-document.addEventListener('click', function() {
+function playMusic() {
     const music = document.getElementById('bgMusic');
     music.play();
-}, { once: true });
+}
 </script>
 
 </body>
